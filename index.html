@@ -1,113 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Tinku ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinku Purkait ❤️</title>
 
-  <link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050816;
+overflow-x:hidden;
+color:white;
+}
+
+section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+position:relative;
+}
+
+h1{
+font-size:70px;
+font-weight:700;
+text-align:center;
+background:linear-gradient(to right,#ff4d6d,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+filter:drop-shadow(0 0 10px #ff4d6d);
+}
+to{
+filter:drop-shadow(0 0 30px #ff99ac);
+}
+}
+
+p{
+max-width:700px;
+text-align:center;
+margin-top:20px;
+font-size:20px;
+line-height:1.8;
+color:#d6d6d6;
+}
+
+.btn{
+margin-top:40px;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:linear-gradient(to right,#ff4d6d,#ff758f);
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.4s;
+text-decoration:none;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px #ff4d6d;
+}
+
+.hearts{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.hearts span{
+position:absolute;
+bottom:-100px;
+font-size:30px;
+animation:float 10s linear infinite;
+color:#ff4d6d;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+.gallery{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+
+.card{
+width:250px;
+height:320px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:20px;
+overflow:hidden;
+transition:.5s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(255,255,255,.2);
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.final h2{
+font-size:60px;
+color:#ff4d6d;
+}
+
+.music{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="hero">
-
-  <div class="overlay"></div>
-
-  <div class="content">
-
-    <h3>Hey Tinku Purkait</h3>
-
-    <h1>You Are Seriously Special ✨</h1>
-
-    <p>
-      জানি না ঠিক কখন থেকে…
-      কিন্তু তোমার সাথে কথা বলা,
-      তোমার presence,
-      তোমার vibe —
-      সবকিছু আলাদা লাগতে শুরু করেছিল।
-    </p>
-
-    <a href="#next" class="btn">
-      Click Here ❤️
-    </a>
-
-  </div>
-
+<div class="hearts">
+<span style="left:10%">❤️</span>
+<span style="left:20%">❤️</span>
+<span style="left:35%">❤️</span>
+<span style="left:50%">❤️</span>
+<span style="left:70%">❤️</span>
+<span style="left:85%">❤️</span>
 </div>
 
-<section id="next" class="section">
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
 
-  <h2>Little Things About You</h2>
+<section>
 
-  <div class="cards">
+<h1>Tinku Purkait ❤️</h1>
 
-    <div class="card">
-      <h3>Your Smile</h3>
-      <p>
-        এটা honestly dangerous 🙂
-      </p>
-    </div>
+<p>
+তোমাকে ঠিক কিভাবে explain করবো জানি না...
+কিন্তু তুমি আসার পর থেকে আমার পৃথিবীটা অন্যরকম সুন্দর হয়ে গেছে।
+</p>
 
-    <div class="card">
-      <h3>Your Voice</h3>
-      <p>
-        Weirdly calming.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Your Presence</h3>
-      <p>
-        Makes everything feel lighter.
-      </p>
-    </div>
-
-  </div>
+<a href="#page2" class="btn">Enter ✨</a>
 
 </section>
 
-<section class="love">
+<section id="page2">
 
-  <h2>Something I Wanted To Say...</h2>
+<h1>You Are Different 🌸</h1>
 
-  <p>
-    আমি খুব perfect কেউ না।
-    কিন্তু তোমাকে genuinely পছন্দ করি।
-    তোমার সাথে কথা বললে দিনটা better লাগে।
-  </p>
+<p>
+তোমার maturity, তোমার কথা বলার style,
+তোমার হাসি...
+সবকিছুই আমার কাছে অন্যরকম লাগে।
+তুমি হয়তো বুঝো না,
+কিন্তু তুমি আমার দিনটাকে সুন্দর করে দাও।
+</p>
 
-  <p>
-    And honestly...
-    I would love to know you more.
-  </p>
-
-  <button id="surpriseBtn">
-    Final Surprise ✨
-  </button>
+<a href="#page3" class="btn">Next 💌</a>
 
 </section>
 
-<div id="popup" class="popup hidden">
+<section id="page3">
 
-  <div class="popup-content">
+<h1>Little Moments 📸</h1>
 
-    <h1>Tinku...</h1>
+<div class="gallery">
 
-    <p>
-      Will you let me be
-      someone special in your life? ❤️
-    </p>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+</div>
 
-    <h2>— Nahid</h2>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+</div>
 
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+</div>
 
 </div>
 
-<script src="script.js"></script>
+<a href="#final" class="btn">Final Surprise 🎁</a>
+
+</section>
+
+<section class="final" id="final">
+
+<h2>I Really Like You ❤️</h2>
+
+<p>
+আমি জানি তুমি আমার থেকে বড়,
+কিন্তু feelings কখনো age দেখে না...
+আমি শুধু চাই,
+তুমি আমার জীবনে থাকো ✨
+</p>
+
+<a class="btn">Will You Stay With Me? 💍</a>
+
+</section>
 
 </body>
 </html>
