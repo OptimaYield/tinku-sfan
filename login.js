@@ -10,7 +10,7 @@ document.getElementById("password").value;
 if(password === correctPassword){
 
 document.getElementById("otpSection")
-.classList.remove("hidden");
+.style.display = "block";
 
 generatedOTP =
 Math.floor(1000 + Math.random()*9000);
@@ -19,8 +19,11 @@ document.getElementById("generatedOtp")
 .innerText = generatedOTP;
 
 }else{
+
 alert("Wrong Password");
+
 }
+
 }
 
 function verifyOTP(){
@@ -30,9 +33,12 @@ document.getElementById("otpInput").value;
 
 if(otpInput == generatedOTP){
 
-window.location.href = "about.html";
+window.location.href = "welcome.html";
 
 }else{
+
 alert("Invalid OTP");
+
 }
+
 }
