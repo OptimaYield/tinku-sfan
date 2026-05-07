@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Soul Beyond Time</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="particles"></div>
+<div class="rose-container"></div>
+
+<div class="moon"></div>
+
+<div class="floating-text">
+Assalamualaikum 🌙
+</div>
+
+<div class="login-container">
+
+<h1 class="main-title">
+Soul Beyond Time
+</h1>
+
+<p class="subtitle">
+To Tinku Purkait
+</p>
+
+<div class="glass-box">
+
+<input 
+type="text" 
+value="Tinku Purkait"
+readonly
+class="input-box"
+/>
+
+<input 
+type="password" 
+id="password"
+maxlength="12"
+placeholder="Enter Secret Password"
+class="input-box"
+/>
+
+<button onclick="verifyPassword()" class="login-btn">
+Enter Soul Portal
+</button>
+
+<div id="otpSection" class="hidden">
+<p class="otp-text">
+Secure Love OTP
+</p>
+
+<div id="generatedOtp" class="otp-code"></div>
+
+<input 
+type="text" 
+id="otpInput"
+maxlength="4"
+placeholder="Enter OTP"
+class="input-box"
+/>
+
+<button onclick="verifyOTP()" class="login-btn">
+Verify Soul
+</button>
+</div>
+
+</div>
+</div>
+
+<audio autoplay loop>
+<source src="assets/music/ambient.mp3" type="audio/mp3">
+</audio>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
