@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Proposal 💖</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+      overflow-x:hidden;
+      background:
+      radial-gradient(circle at top left,#ffd6ec,#ffe8f5,#fff0f8),
+      linear-gradient(to bottom,#ffd6ec,#ffe8f5,#fff0f8);
+      min-height:100vh;
+      color:white;
+      position:relative;
+    }
+
+    .glow{
+      position:fixed;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      filter:blur(150px);
+      z-index:-1;
+      opacity:.5;
+    }
+
+    .g1{
+      background:#ff69b4;
+      top:-150px;
+      left:-150px;
+    }
+
+    .g2{
+      background:#ffb6d9;
+      bottom:-150px;
+      right:-150px;
+    }
+
+    .marquee{
+      width:100%;
+      overflow:hidden;
+      white-space:nowrap;
+      position:fixed;
+      left:0;
+      z-index:100;
+      background:rgba(255,255,255,.2);
+      backdrop-filter:blur(10px);
+      padding:12px 0;
+      font-size:22px;
+      font-weight:bold;
+      color:#ff1493;
+    }
+
+    .top{
+      top:0;
+    }
+
+    .bottom{
+      bottom:0;
+    }
+
+    .track{
+      display:inline-block;
+      animation:marquee 15s linear infinite;
+    }
+
+    @keyframes marquee{
+      from{
+        transform:translateX(0);
+      }
+      to{
+        transform:translateX(-50%);
+      }
+    }
+
+    .rose{
+      position:fixed;
+      top:-50px;
+      font-size:22px;
+      animation:fall linear infinite;
+      z-index:1;
+    }
+
+    @keyframes fall{
+      0%{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    .container{
+      position:relative;
+      z-index:10;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px;
+    }
+
+    .heart{
+      font-size:220px;
+      animation:
+      pulse 2s infinite,
+      colorChange 12s linear forwards;
+      transition:1s;
+      color:black;
+      filter:drop-shadow(0 0 30px rgba(255,255,255,.6));
+    }
+
+    @keyframes pulse{
+      0%,100%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.08);
+      }
+    }
+
+    @keyframes colorChange{
+      from{
+        color:black;
+      }
+      to{
+        color:white;
+      }
+    }
+
+    .count{
+      font-size:70px;
+      font-weight:900;
+      margin-top:20px;
+      background:linear-gradient(to right,#ff1493,#ff69b4,#ff1493);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:blink 1s infinite;
+    }
+
+    @keyframes blink{
+      50%{
+        opacity:.6;
+      }
+    }
+
+    .broken{
+      font-size:180px;
+      margin-top:40px;
+      animation:shake 1s infinite;
+      display:none;
+    }
+
+    @keyframes shake{
+      0%{
+        transform:translateX(0);
+      }
+      25%{
+        transform:translateX(-5px);
+      }
+      50%{
+        transform:translateX(5px);
+      }
+      100%{
+        transform:translateX(0);
+      }
+    }
+
+    .blood{
+      width:10px;
+      height:0;
+      background:red;
+      border-radius:50px;
+      margin:auto;
+      box-shadow:0 0 20px red;
+      transition:2s;
+    }
+
+    .love-box{
+      margin-top:60px;
+      position:relative;
+    }
+
+    .love{
+      font-size:220px;
+      animation:float 4s infinite ease-in-out;
+      filter:drop-shadow(0 0 30px rgba(255,255,255,.8));
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-15px);
+      }
+    }
+
+    .name{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      font-size:55px;
+      font-weight:900;
+      background:linear-gradient(to right,#fff,#ffe4f3,#fff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:0 0 20px #ff69b4;
+      width:100%;
+    }
+
+    .text{
+      margin-top:40px;
+      max-width:900px;
+      color:#c71585;
+      font-size:28px;
+      font-weight:bold;
+      line-height:1.8;
+    }
+
+    .password-box{
+      margin-top:70px;
+      width:100%;
+      max-width:500px;
+      background:rgba(255,255,255,.3);
+      backdrop-filter:blur(20px);
+      border-radius:30px;
+      padding:40px;
+      box-shadow:0 0 40px rgba(255,255,255,.6);
+    }
+
+    .password-box h2{
+      font-size:42px;
+      margin-bottom:25px;
+      background:linear-gradient(to right,#ff1493,#ff69b4);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    input{
+      width:100%;
+      padding:18px;
+      border:none;
+      outline:none;
+      border-radius:20px;
+      font-size:20px;
+      color:#ff1493;
+    }
+
+    button{
+      width:100%;
+      padding:18px;
+      margin-top:20px;
+      border:none;
+      border-radius:20px;
+      font-size:22px;
+      font-weight:bold;
+      color:white;
+      cursor:pointer;
+      background:linear-gradient(to right,#ff1493,#ff69b4,#ff1493);
+      box-shadow:0 0 30px rgba(255,20,147,.7);
+      transition:.3s;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    .success{
+      margin-top:40px;
+      font-size:40px;
+      color:#ff1493;
+      font-weight:900;
+      animation:blink 1s infinite;
+    }
+
+    .extra{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      width:100%;
+      max-width:1200px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.35);
+      backdrop-filter:blur(15px);
+      border-radius:30px;
+      padding:30px;
+      color:#c71585;
+      font-size:22px;
+      font-weight:bold;
+      box-shadow:0 0 30px rgba(255,255,255,.5);
+      transition:.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+    }
+
+    .footer-title{
+      margin-top:100px;
+      font-size:70px;
+      font-weight:900;
+      background:linear-gradient(to right,#ff1493,#ff69b4,#ff1493);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:blink 1s infinite;
+    }
+
+    .footer-text{
+      margin-top:30px;
+      color:#c71585;
+      font-size:30px;
+      font-weight:bold;
+      max-width:1000px;
+      line-height:1.8;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+
+<div class="marquee top">
+  <div class="track">
+    💖 Life Line Medical 💖 Life Line Medical 💖 Life Line Medical 💖 Life Line Medical 💖
+  </div>
+</div>
+
+<div class="marquee bottom">
+  <div class="track">
+    🌸 Forever Love Forever 🌸 Forever Love Forever 🌸 Forever Love Forever 🌸
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="heart" id="heart">🖤</div>
+
+  <div class="count" id="count">12</div>
+
+  <div class="broken" id="broken">💔</div>
+
+  <div class="blood" id="blood"></div>
+
+  <div class="love-box">
+    <div class="love">💖</div>
+
+    <div class="name">
+      Tinku Purkait
+    </div>
+  </div>
+
+  <div class="text">
+    🌷 তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি... <br><br>
+    💕 তোমার হাসির মাঝেই আমি আমার পৃথিবী খুঁজে পাই... <br><br>
+    ✨ আমি চাই আমার প্রতিটা মুহূর্ত তোমার হাত ধরে কাটুক... <br><br>
+    💖 তুমি কি আমার জীবনের সবচেয়ে সুন্দর অধ্যায় হয়ে থাকবে?
+  </div>
+
+  <div class="password-box">
+
+    <h2>Enter Love Password 💘</h2>
+
+    <input type="password" id="pass" placeholder="Enter Secret Password">
+
+    <button onclick="checkPassword()">
+      Unlock My Heart 💖
+    </button>
+
+    <div class="success hidden" id="success">
+      💍 YES! Welcome My Queen 💍
+    </div>
+
+  </div>
+
+  <div class="extra">
+
+    <div class="card">
+      🌸 তোমার হাসি আমার পৃথিবীর সবচেয়ে সুন্দর আলো
+    </div>
+
+    <div class="card">
+      💖 প্রতিটি হৃদস্পন্দনে শুধু তোমাকেই অনুভব করি
+    </div>
+
+    <div class="card">
+      ✨ তোমার সাথে কাটানো প্রতিটা মুহূর্ত স্বপ্নের মতো
+    </div>
+
+  </div>
+
+  <div class="footer-title">
+    Will You Be Mine Forever? 💍
+  </div>
+
+  <div class="footer-text">
+    তুমি যদি হ্যাঁ বলো... তাহলে আমার পুরো পৃথিবীটা সবচেয়ে সুন্দর হয়ে যাবে 💗
+  </div>
+
+</div>
+
+<script>
+
+  for(let i=0;i<50;i++){
+
+    let rose=document.createElement('div');
+
+    rose.className='rose';
+
+    rose.innerHTML=Math.random()>0.5?'🤍':'🖤';
+
+    rose.style.left=Math.random()*100+'%';
+
+    rose.style.animationDuration=
+    (Math.random()*8+6)+'s';
+
+    rose.style.fontSize=
+    (Math.random()*20+15)+'px';
+
+    rose.style.animationDelay=
+    Math.random()*5+'s';
+
+    document.body.appendChild(rose);
+
+  }
+
+  let time=12;
+
+  let count=document.getElementById('count');
+
+  let heart=document.getElementById('heart');
+
+  let broken=document.getElementById('broken');
+
+  let blood=document.getElementById('blood');
+
+  let interval=setInterval(()=>{
+
+    time--;
+
+    count.innerHTML=time;
+
+    if(time<=0){
+
+      clearInterval(interval);
+
+      heart.style.display='none';
+
+      broken.style.display='block';
+
+      blood.style.height='180px';
+
+    }
+
+  },1000);
+
+  function checkPassword(){
+
+    let pass=
+    document.getElementById('pass').value;
+
+    if(pass==="Tinkubs1135"){
+
+      document
+      .getElementById('success')
+      .classList.remove('hidden');
+
+    }else{
+
+      alert("Wrong Password 💔");
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
